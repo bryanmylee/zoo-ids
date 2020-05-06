@@ -43,7 +43,7 @@ generateId('longest seed', 4, {
 ##### `seed: any`
 
 The seed used to generate the id. This allows us to generate predictable, but
-random and unique identifiers. Defaults to `0`.
+random and unique identifiers. Defaults to the current time in milliseconds.
 
 ##### `adjectiveCount: integer`
 

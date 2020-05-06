@@ -10,7 +10,7 @@ const animals = require('./animals');
  * @param {('titlecase'|'camelcase'|'uppercase'|'lowercase'|'togglecase')} [caseStyle='titlecase'] The case style for words
  */
 function generateId(seed, adjectiveCount, opts) {
-  if (seed == null) seed = 0;
+  if (seed == null) seed = new Date().getTime();
   if (opts == null) opts = {
     delimiter: '',
     caseStyle: 'titlecase',
