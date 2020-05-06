@@ -1,4 +1,4 @@
-const { alea } = require('seedrandom');
+const Alea = require('./Alea');
 const adjectives = require('./adjectives');
 const animals = require('./animals');
 
@@ -19,7 +19,7 @@ function generateId(seed, adjectiveCount, opts) {
   if (opts.delimiter == null) opts.delimiter = '';
   if (opts.caseStyle == null) opts.caseStyle = 'titlecase';
 
-  const rng = alea(seed);
+  const rng = Alea(seed);
 
   let result = '';
   let index;
@@ -62,7 +62,7 @@ function getFormattedWords(words, opts) {
 }
 
 function getToggleCaseWord(word) {
-  const rng = alea(word);
+  const rng = Alea(word);
   return word.split('').map(function(char) {
     if (rng() > 0.5) return char.toUpperCase();
     return char;
