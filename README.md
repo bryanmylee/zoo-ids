@@ -56,7 +56,7 @@ multi-word adjectives. Defaults to `''`.
 
 ##### `opts.caseStyle: enum`
 
-The case style for the words.
+The case style for the words. Possible options are `'titlecase'`, `'camelcase'`, `'uppercase'`, `'lowercase'`, and `'togglecase'`.
 
 ```js
 generateId('titlecase', 2, { caseStyle: 'titlecase' }); // FineAntiqueElk
