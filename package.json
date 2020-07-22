@@ -1,6 +1,6 @@
 {
   "name": "gfycat-ids",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate unique seedable IDs in the same style as Gfycat",
   "main": "index.js",
   "types": "index.d.ts",
@@ -22,5 +22,5 @@
   "bugs": {
     "url": "https://github.com/bryanmylee/gfycat-ids/issues"
   },
-  "homepage": "https://github.com/bryanmylee/gfycat-ids#readme",
+  "homepage": "https://github.com/bryanmylee/gfycat-ids#readme"
 }

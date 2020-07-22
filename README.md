@@ -28,12 +28,16 @@ const { generateId } = require('gfycat-ids');
 
 generateId('short seed'); // KnobbyNauticalKingfisher
 
-generateId('longer seed', 3); // RadiantGrowingOutstandingGrasshopper
+/* Any object can be used as a seed. */
+generateId({ key: 'value' }, 2, {
+  caseStyle: 'camelcase'
+}); // weeklyGreatRacoon
 
-generateId('longest seed', 4, {
-  delimiter: '-',
-  caseStyle: 'lowercase'
-}); // unwritten-shameless-enchanted-international-cormorant
+/* Defaults to the current time if seed is null. */
+generateId(null, 2, {
+  caseStyle: 'lowercase',
+  delimiter: '🍓',
+}); // enchanted🍓narrow🍓wallaby
 ```
 
 ### Documentation
@@ -43,16 +47,22 @@ generateId('longest seed', 4, {
 ##### `seed: any`
 
 The seed used to generate the id. This allows us to generate predictable, but
-random and unique identifiers. Defaults to the current time in milliseconds.
+random and unique identifiers.
+
+Defaults to the current time in milliseconds.
 
 ##### `adjectiveCount: integer`
 
-The number of adjectives to use in the identifier. Defaults to `2`.
+The number of adjectives to use in the identifier.
+
+Defaults to `2`.
 
 ##### `opts.delimiter: string`
 
 The delimiter used between words. The delimiter will also be used between
-multi-word adjectives. Defaults to `''`.
+multi-word adjectives.
+
+Defaults to `''`.
 
 ##### `opts.caseStyle: enum`
 
