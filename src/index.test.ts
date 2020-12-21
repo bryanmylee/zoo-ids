@@ -62,12 +62,16 @@ test('custom delimiter', () => {
 const numberOfUppercase = (s: string) => {
   let num = 0;
   s.split('').forEach(c => {
-    if (c.toUpperCase() === c) {
+    if (isUpperCase(c)) {
       num++;
     }
   })
   return num;
-}
+};
+
+const isUpperCase = (s: string) => {
+  return s.toUpperCase() === s;
+};
 
 test('titlecase should have 3 upper case letters', () => {
   // Act
@@ -93,7 +97,7 @@ test('uppercase should have all upper case letters', () => {
     caseStyle: 'uppercase',
   });
   // Assert
-  expect(result).toSatisfy(s => numberOfUppercase(s) === result.length);
+  expect(result).toSatisfy(isUpperCase);
 });
 
 test('lowercase should have no upper case letters', () => {
@@ -112,5 +116,24 @@ test('togglecase should start with lowercase', () => {
   });
   // Assert
   expect(result).toSatisfy(s => s.charAt(0).toLowerCase() === s.charAt(0));
+});
+
+const isToggleCase = (s: string) => {
+  const startLower = !isUpperCase(s.charAt(0));
+  for (let i = 0; i < s.length; i++) {
+    if (startLower !== ((i % 2 === 0) !== isUpperCase(s.charAt(i)))) {
+      return false;
+    }
+  }
+  return true;
+};
+
+test('togglecase should have alternating case', () => {
+  // Act
+  const result = generateId(sampleSeed, {
+    caseStyle: 'togglecase',
+  });
+  // Assert
+  expect(result).toSatisfy(isToggleCase);
 });
 
