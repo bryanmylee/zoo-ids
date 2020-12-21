@@ -61,7 +61,7 @@ function getFormattedWord(word: string, options: GenerateIdOptions): string {
 
 function getToggleCaseWord(word: string) {
   return word.split('')
-      .map((c, i) => i % 2 === 0 ? c.toUpperCase() : c)
+      .map((c, i) => i % 2 === 0 ? c : c.toUpperCase())
       .join('');
 }
 
