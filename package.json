@@ -1,7 +1,7 @@
 {
-  "name": "gfycat-ids",
+  "name": "zoo-ids",
   "version": "2.0.0",
-  "description": "Generate unique seedable IDs in the same style as Gfycat",
+  "description": "Generate predictable and unique identifiers composed of adjectives and animal names",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -15,23 +15,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bryanmylee/gfycat-ids.git"
+    "url": "git+https://github.com/bryanmylee/zoo-ids.git"
   },
   "keywords": [
-    "gfycat",
+    "adjective",
+    "animal",
+    "generator",
     "id",
-    "uuid",
     "random",
     "seed",
-    "vanity",
-    "style"
+    "style",
+    "unique",
+    "uuid",
+    "vanity"
   ],
   "author": "Bryan Lee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bryanmylee/gfycat-ids/issues"
+    "url": "https://github.com/bryanmylee/zoo-ids/issues"
   },
-  "homepage": "https://github.com/bryanmylee/gfycat-ids#readme",
+  "homepage": "https://github.com/bryanmylee/zoo-ids#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.1.0",
     "@types/jest": "^26.0.19",
