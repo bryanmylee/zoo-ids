@@ -1,7 +1,7 @@
-import Alea from './lib/Alea';
+import Alea from './lib/alea';
 import adjectives from './adjectives';
 import animals from './animals';
-import type { RandomGenerator } from './lib/Alea';
+import type { RandomGenerator } from './lib/alea';
 
 type CaseStyle = 'titlecase' | 'camelcase' | 'uppercase' | 'lowercase' | 'togglecase';
 interface GenerateIdOptions {
