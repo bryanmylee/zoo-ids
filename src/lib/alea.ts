@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface RandomGenerator {
   (): number;
   version?: string;
@@ -9,7 +10,7 @@ interface Masher {
   version?: string;
 }
 
-const alea = (...seed: any[]) => {
+const alea = (...seed: any[]): RandomGenerator => {
   return getRandomGenerator([...seed]);
 };
 

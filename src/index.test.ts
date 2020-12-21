@@ -25,7 +25,7 @@ const numberOfUppercase = (s: string) => {
     if (isUpperCase(c)) {
       num++;
     }
-  })
+  });
   return num;
 };
 
@@ -36,7 +36,9 @@ const isUpperCase = (s: string) => {
 const isToggleCase = (s: string) => {
   const startLower = !isUpperCase(s.charAt(0));
   for (let i = 0; i < s.length; i++) {
-    if (startLower !== ((i % 2 === 0) !== isUpperCase(s.charAt(i)))) {
+    const isEvenIndex = i % 2 === 0;
+    const isCorrectCase = isEvenIndex !== isUpperCase(s.charAt(i));
+    if (startLower !== isCorrectCase) {
       return false;
     }
   }
