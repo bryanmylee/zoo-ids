@@ -18,7 +18,9 @@ const defaultOptions: GenerateIdOptions = {
 
 const cachedGenerator: RandomGenerator = Alea();
 
-export function generateId(seed: any = null, options: Partial<GenerateIdOptions> = {}) {
+export function generateId(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    seed: any = null, options: Partial<GenerateIdOptions> = {}): string {
   const generator = seed == null ? cachedGenerator : Alea(seed);
   const fullOptions = { ...defaultOptions, ...options };
   const { numAdjectives, delimiter, caseStyle } = fullOptions;
