@@ -11,7 +11,6 @@ interface Masher {
   version?: string;
 }
 
-// From https://github.com/nquinlan/better-random-numbers-for-javascript-mirror/blob/master/support/js/Alea.js
 const alea = (...seed: any[]) => {
   return getRandomGenerator([...seed]);
 };
