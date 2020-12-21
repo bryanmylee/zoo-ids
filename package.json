@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "prepare": "rollup -c && tsc",
-    "test": "jest && coveralls < coverage/lcov.info"
+    "test": "jest --collect-coverage"
   },
   "repository": {
     "type": "git",

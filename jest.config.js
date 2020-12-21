@@ -9,7 +9,7 @@ module.exports = {
   transform: {
     '^.+\\.(ts)$': 'ts-jest',
   },
-  collectCoverageFrom: ['./src/**/*.(ts|js)'],
+  collectCoverageFrom: ['./src/**/*.ts'],
   coveragePathIgnorePatterns: ['./node_modules/'],
   coverageThreshold: {
     global: {
