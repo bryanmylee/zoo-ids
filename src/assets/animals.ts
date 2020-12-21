@@ -1,6 +1,6 @@
 // Adapted from http://en.wikipedia.org/wiki/List_of_animal_names
 // In total, 221 animals
-module.exports = [
+export default [
   'aardvark',
   'albatross',
   'alligator',
@@ -223,3 +223,4 @@ module.exports = [
   'yak',
   'zebra',
 ];
+

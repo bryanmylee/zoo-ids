@@ -1,6 +1,6 @@
 // Adapted from https://gist.github.com/hugsy/8910dc78d208e40de42deb29e62df913#file-english-adjectives-txt
 // In total, 1347 adjectives
-module.exports = [
+export default [
   'abandoned',
   'able',
   'absolute',
@@ -1349,3 +1349,4 @@ module.exports = [
   'zesty',
   'zigzag',
 ];
+
