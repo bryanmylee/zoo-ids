@@ -102,7 +102,7 @@ test('no argument works', () => {
   const result = generateId();
   // Assert
   // adjectives could be one or two words.
-  expect(result).toSatisfy(s => numberOfUppercase(s) === 3);
+  expect(result).toSatisfy(s => numberOfUppercase(s) >= 3 && numberOfUppercase(s) <= 5);
 });
 
 test('titlecase should have 3 upper case letters', () => {
