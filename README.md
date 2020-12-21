@@ -1,4 +1,5 @@
-# zoo-ids
+![zoo-ids](https://user-images.githubusercontent.com/42545742/102789911-b5b15d80-43df-11eb-9f42-7bfe245f7bf4.png)
+
 [![npm version](http://img.shields.io/npm/v/zoo-ids.svg)](https://www.npmjs.com/package/zoo-ids)
 [![npm downloads](https://img.shields.io/npm/dm/zoo-ids.svg)](https://www.npmjs.com/package/zoo-ids)
 ![license](https://img.shields.io/npm/l/zoo-ids)
