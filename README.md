@@ -1,15 +1,11 @@
 # Gfycat IDs
-Generate predictable and unique identifiers in the same style used by
-[gfycat.com](https://gfycat.com), with the ability to seed the random
-identifiers.
+Generate predictable and unique identifiers in the same style used by [gfycat.com](https://gfycat.com), with the ability to seed the random identifiers.
 
 ## Range of IDs
 
-Currently, there are 1347 adjectives and 221 animals. The more adjectives used,
-the more possible combinations of IDs available.
+Currently, there are 1347 adjectives and 221 animals. The more adjectives used, the more possible combinations of IDs available.
 
-For a quick reference, with 2 adjectives used, there are 400,984,389 possible
-unique IDs.
+For a quick reference, with 2 adjectives used, there are 400,984,389 possible unique IDs.
 
 With 3 adjectives, there are 540,125,971,983 possible unique IDs.
 
@@ -28,13 +24,13 @@ const { generateId } = require('gfycat-ids');
 
 generateId('short seed'); // KnobbyNauticalKingfisher
 
-/* Any object can be used as a seed. */
-generateId({ key: 'value' }, 2, {
+// Any object can be used as a seed.
+generateId({ key: 'value' }, {
   caseStyle: 'camelcase'
 }); // weeklyGreatRacoon
 
-/* Defaults to the current time if seed is null. */
-generateId(null, 2, {
+// Defaults to the current time if seed is null.
+generateId(null, {
   caseStyle: 'lowercase',
   delimiter: '🍓',
 }); // enchanted🍓narrow🍓wallaby
@@ -42,7 +38,7 @@ generateId(null, 2, {
 
 ### Documentation
 
-#### `generateId(seed, [adjectiveCount, [{opts}]])`
+#### `generateId(seed, opts?)`
 
 ##### `seed: any`
 
@@ -51,7 +47,7 @@ random and unique identifiers.
 
 Defaults to the current time in milliseconds.
 
-##### `adjectiveCount: integer`
+##### `opts.numAdjectives: number`
 
 The number of adjectives to use in the identifier.
 
@@ -64,20 +60,20 @@ multi-word adjectives.
 
 Defaults to `''`.
 
-##### `opts.caseStyle: enum`
+##### `opts.caseStyle: string`
 
 The case style for the words. Possible options are `'titlecase'`, `'camelcase'`, `'uppercase'`, `'lowercase'`, and `'togglecase'`.
 
 ```js
-generateId('titlecase', 2, { caseStyle: 'titlecase' }); // FineAntiqueElk
+generateId('titlecase', { caseStyle: 'titlecase' }); // FineAntiqueElk
 
-generateId('camelcase', 2, { caseStyle: 'camelcase' }); // pertinentPoshGoldfinch
+generateId('camelcase', { caseStyle: 'camelcase' }); // pertinentPoshGoldfinch
 
-generateId('uppercase', 2, { caseStyle: 'uppercase' }); // PIERCINGRESPONSIBLECAMEL
+generateId('uppercase', { caseStyle: 'uppercase' }); // PIERCINGRESPONSIBLECAMEL
 
-generateId('lowercase', 2, { caseStyle: 'lowercase' }); // imaginarywingedsalamander
+generateId('lowercase', { caseStyle: 'lowercase' }); // imaginarywingedsalamander
 
-generateId('togglecase', 2, { caseStyle: 'togglecase' }); // STUnnINGDesCrIPtiVePeaFOwL
+generateId('togglecase', { caseStyle: 'togglecase' }); // sTuNnInGdEsCrIpTiVepEaFoWl
 ```
 
 Defaults to `'titlecase'`.
