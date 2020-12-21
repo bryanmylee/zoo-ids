@@ -137,3 +137,23 @@ test('togglecase should have alternating case', () => {
   expect(result).toSatisfy(isToggleCase);
 });
 
+test('3 adjectives should produce 4 words', () => {
+  // Act
+  const result = generateId(sampleSeed, {
+    delimiter: ' ',
+    numAdjectives: 3,
+  });
+  // Assert
+  expect(result).toSatisfy(s => s.split(' ').length === 4);
+});
+
+test('4 adjectives should produce 5 words', () => {
+  // Act
+  const result = generateId(sampleSeed, {
+    delimiter: ' ',
+    numAdjectives: 3,
+  });
+  // Assert
+  expect(result).toSatisfy(s => s.split(' ').length === 4);
+});
+
