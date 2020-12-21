@@ -26,7 +26,7 @@ export function generateId(seed: any = null, options: Partial<GenerateIdOptions>
   for (let i = 0; i < numAdjectives; i++) {
     const adjective = getRandomElement(generator, adjectives);
     result += getFormattedWord(adjective, { numAdjectives, delimiter, caseStyle });
-    result += options.delimiter;
+    result += fullOptions.delimiter;
   }
   const animal = getRandomElement(generator, animals);
   result += getFormattedWord(animal, fullOptions);
