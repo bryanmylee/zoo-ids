@@ -15,7 +15,7 @@ export default class IdGenerator {
   private generator: RandomGenerator;
   private options: GenerateIdOptions;
 
-  constructor(seed: any, {
+  constructor(seed: any = null, {
     numAdjectives = 2,
     delimiter = '',
     caseStyle = 'titlecase',
@@ -78,4 +78,8 @@ export default class IdGenerator {
   }
 
 }
+
+const idGenerator = new IdGenerator();
+
+export const generateId = idGenerator.generateId;
 
