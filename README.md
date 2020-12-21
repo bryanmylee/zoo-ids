@@ -5,7 +5,7 @@
 ![license](https://img.shields.io/npm/l/zoo-ids)
 ![build](https://img.shields.io/github/workflow/status/bryanmylee/zoo-ids/publish)
 [![coverage](https://coveralls.io/repos/github/bryanmylee/zoo-ids/badge.svg?branch=master)](https://coveralls.io/github/bryanmylee/zoo-ids?branch=master)
-![size](https://img.shields.io/bundlephobia/min/zoo-ids)
+[![size](https://img.shields.io/bundlephobia/min/zoo-ids)](https://bundlephobia.com/result?p=zoo-ids)
 
 Generate **predictable** and **unique** identifiers composed of adjectives and animal names, with the ability to seed the random identifiers.
 
