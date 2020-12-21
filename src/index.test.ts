@@ -43,6 +43,7 @@ test('array seed', () => {
 });
 
 const sampleSeed = 'abc';
+// as of v2.0.0, seed 'abc' produces 'late gargantuan spider'.
 const sampleTokens = generateId(sampleSeed, {
   caseStyle: 'lowercase',
   delimiter: ' ',
@@ -155,5 +156,39 @@ test('4 adjectives should produce 5 words', () => {
   });
   // Assert
   expect(result).toSatisfy(s => s.split(' ').length === 4);
+});
+
+test('null seed works', () => {
+  // Act
+  const result = generateId(null, {
+    delimiter: ' ',
+  });
+  // Assert
+  // adjectives could be one or two words.
+  expect(result).toSatisfy(r => {
+    return r.split(' ').length >= 3 && r.split(' ').length <= 5;
+  });
+});
+
+test('multi-word adjective', () => {
+  // Act
+  // as of v2.0.0, seed = 193 returns Second Hand Wee Fox, which includes a
+  // multi-word adjective.
+  const result = generateId(193, {
+    delimiter: ' ',
+  });
+  // Assert
+  expect(result).toSatisfy(r => r.split(' ').length == 4);
+});
+
+test('delimiter does not affect id generation', () => {
+  // Act
+  const result1 = generateId(sampleSeed, {
+    delimiter: ' ',
+  });
+  const result2 = generateId(sampleSeed, {
+    delimiter: ',',
+  });
+  expect(result1.split(' ')).toEqual(result2.split(','));
 });
 
