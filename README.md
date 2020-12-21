@@ -1,5 +1,11 @@
-# Gfycat IDs
-Generate predictable and unique identifiers in the same style used by [gfycat.com](https://gfycat.com), with the ability to seed the random identifiers.
+# zoo-ids
+[![npm version](http://img.shields.io/npm/v/zoo-ids.svg)](https://www.npmjs.com/package/zoo-ids)
+[![npm downloads](https://img.shields.io/npm/dm/zoo-ids.svg)](https://www.npmjs.com/package/zoo-ids)
+![license](https://img.shields.io/npm/l/zoo-ids)
+![build](https://img.shields.io/github/workflow/status/bryanmylee/zoo-ids/publish)
+![size](https://img.shields.io/bundlephobia/min/zoo-ids)
+
+Generate **predictable** and **unique** identifiers composed of adjectives and animal names, with the ability to seed the random identifiers.
 
 ## Range of IDs
 
@@ -12,7 +18,7 @@ With 3 adjectives, there are 540,125,971,983 possible unique IDs.
 ## Installation
 
 ```bash
-$ npm install gfycat-ids
+$ npm install zoo-ids
 ```
 
 ## Usage
@@ -20,7 +26,7 @@ $ npm install gfycat-ids
 ### Examples
 
 ```js
-const { generateId } = require('gfycat-ids');
+import { generateId } from 'zoo-ids';
 
 generateId('short seed'); // KnobbyNauticalKingfisher
 
@@ -80,10 +86,7 @@ Defaults to `'titlecase'`.
 
 ## Credits
 
-This project was inspired by
-[gfycat-style-urls](https://github.com/dexo568/gfycat-style-urls).
+This project was inspired by the url ids used by [gfycat.com](https://gfycat.com).
 
 The seeded random number generator used is powered by the alea algorithm by
 Johannes Baagøe `<baagoe@baagoe.com>`, ported by [nquinlan/better-random-numbers-for-javascript-mirror](https://github.com/nquinlan/better-random-numbers-for-javascript-mirror/blob/master/support/js/Alea.js).
-
-> This repository is not affiliated with [gfycat.com](https://gfycat.com).
