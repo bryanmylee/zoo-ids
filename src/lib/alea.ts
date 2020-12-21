@@ -1,7 +1,5 @@
 export interface RandomGenerator {
   (): number;
-  uint32?: () => number;
-  fract53?: () => number;
   version?: string;
   seed?: any[];
 }
@@ -50,13 +48,6 @@ const getRandomGenerator = (seed: any[]) => {
     s0 = s1;
     s1 = s2;
     return s2 = t - (c = t | 0);
-  };
-  random.uint32 = function() {
-    return random() * 0x100000000; // 2^32
-  };
-  random.fract53 = function() {
-    return random() +
-      (random() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
   };
   random.version = 'Alea 0.9';
   random.seed = seed;

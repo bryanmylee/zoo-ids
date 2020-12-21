@@ -16,7 +16,7 @@ const defaultOptions: GenerateIdOptions = {
   caseStyle: 'titlecase',
 };
 
-const cachedGenerator: RandomGenerator = Alea(new Date());
+const cachedGenerator: RandomGenerator = Alea();
 
 export function generateId(seed: any = null, options: Partial<GenerateIdOptions> = {}) {
   const generator = seed == null ? cachedGenerator : Alea(seed);

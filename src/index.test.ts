@@ -201,3 +201,10 @@ test('delimiter does not affect id generation', () => {
   expect(result1.split(' ')).toEqual(result2.split(','));
 });
 
+test('many seeds to cover all mash possibilities', () => {
+  // Act
+  for (let i = 0; i < 100; i++) {
+    generateId(i);
+  }
+});
+
