@@ -1,6 +1,49 @@
 import 'jest-extended';
 import { generateId } from './index';
 
+const sampleSeed = 'abc';
+// as of v2.0.0, seed 'abc' produces 'late gargantuan spider'.
+const sampleTokens = generateId(sampleSeed, {
+  caseStyle: 'lowercase',
+  delimiter: ' ',
+}).split(' ');
+const sampleTokens_titlecased = sampleTokens
+    .map(s => s.charAt(0).toUpperCase() + s.slice(1));
+
+test('custom delimiter', () => {
+  // Act
+  const result = generateId(sampleSeed, {
+    delimiter: '//',
+  });
+  // Assert
+  expect(result).toEqual(sampleTokens_titlecased.join('//'));
+});
+
+const numberOfUppercase = (s: string) => {
+  let num = 0;
+  s.split('').forEach(c => {
+    if (isUpperCase(c)) {
+      num++;
+    }
+  })
+  return num;
+};
+
+const isUpperCase = (s: string) => {
+  return s.toUpperCase() === s;
+};
+
+const isToggleCase = (s: string) => {
+  const startLower = !isUpperCase(s.charAt(0));
+  for (let i = 0; i < s.length; i++) {
+    if (startLower !== ((i % 2 === 0) !== isUpperCase(s.charAt(i)))) {
+      return false;
+    }
+  }
+  return true;
+};
+
+
 test('same seed same id', () => {
   // Arrange
   const seed = 'abc';
@@ -42,37 +85,25 @@ test('array seed', () => {
   expect(result1).toEqual(result2);
 });
 
-const sampleSeed = 'abc';
-// as of v2.0.0, seed 'abc' produces 'late gargantuan spider'.
-const sampleTokens = generateId(sampleSeed, {
-  caseStyle: 'lowercase',
-  delimiter: ' ',
-}).split(' ');
-const sampleTokens_titlecased = sampleTokens
-    .map(s => s.charAt(0).toUpperCase() + s.slice(1));
-
-test('custom delimiter', () => {
+test('null seed works', () => {
   // Act
-  const result = generateId(sampleSeed, {
-    delimiter: '//',
+  const result = generateId(null, {
+    delimiter: ' ',
   });
   // Assert
-  expect(result).toEqual(sampleTokens_titlecased.join('//'));
+  // adjectives could be one or two words.
+  expect(result).toSatisfy(r => {
+    return r.split(' ').length >= 3 && r.split(' ').length <= 5;
+  });
 });
 
-const numberOfUppercase = (s: string) => {
-  let num = 0;
-  s.split('').forEach(c => {
-    if (isUpperCase(c)) {
-      num++;
-    }
-  })
-  return num;
-};
-
-const isUpperCase = (s: string) => {
-  return s.toUpperCase() === s;
-};
+test('no argument works', () => {
+  // Act
+  const result = generateId();
+  // Assert
+  // adjectives could be one or two words.
+  expect(result).toSatisfy(s => numberOfUppercase(s) === 3);
+});
 
 test('titlecase should have 3 upper case letters', () => {
   // Act
@@ -119,16 +150,6 @@ test('togglecase should start with lowercase', () => {
   expect(result).toSatisfy(s => s.charAt(0).toLowerCase() === s.charAt(0));
 });
 
-const isToggleCase = (s: string) => {
-  const startLower = !isUpperCase(s.charAt(0));
-  for (let i = 0; i < s.length; i++) {
-    if (startLower !== ((i % 2 === 0) !== isUpperCase(s.charAt(i)))) {
-      return false;
-    }
-  }
-  return true;
-};
-
 test('togglecase should have alternating case', () => {
   // Act
   const result = generateId(sampleSeed, {
@@ -156,18 +177,6 @@ test('4 adjectives should produce 5 words', () => {
   });
   // Assert
   expect(result).toSatisfy(s => s.split(' ').length === 4);
-});
-
-test('null seed works', () => {
-  // Act
-  const result = generateId(null, {
-    delimiter: ' ',
-  });
-  // Assert
-  // adjectives could be one or two words.
-  expect(result).toSatisfy(r => {
-    return r.split(' ').length >= 3 && r.split(' ').length <= 5;
-  });
 });
 
 test('multi-word adjective', () => {
