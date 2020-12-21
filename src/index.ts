@@ -1,6 +1,6 @@
 import Alea from './lib/Alea';
-import adjectives from './assets/adjectives';
-import animals from './assets/animals';
+import adjectives from './adjectives';
+import animals from './animals';
 import type { RandomGenerator } from './lib/Alea';
 
 type CaseStyle = 'titlecase' | 'camelcase' | 'uppercase' | 'lowercase' | 'togglecase';

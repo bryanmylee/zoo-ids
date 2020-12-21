@@ -1,5 +1,18 @@
+export interface RandomGenerator {
+  (): number;
+  uint32?: () => number;
+  fract53?: () => number;
+  version?: string;
+  args?: any;
+}
+
+interface Mashed {
+  (data: any): number;
+  version?: string;
+}
+
 // From https://github.com/nquinlan/better-random-numbers-for-javascript-mirror/blob/master/support/js/Alea.js
-function Alea() {
+const Alea = (seed: any) => {
   return (function(args) {
     // Johannes Baagøe <baagoe@baagoe.com>, 2010
     var s0 = 0;
@@ -10,7 +23,7 @@ function Alea() {
     if (args.length == 0) {
       args = [+new Date];
     }
-    var mash = Mash();
+    var mash: ((data: any) => number) | null = Mash();
     s0 = mash(' ');
     s1 = mash(' ');
     s2 = mash(' ');
@@ -31,7 +44,7 @@ function Alea() {
     }
     mash = null;
 
-    var random = function() {
+    var random: RandomGenerator = function() {
       var t = 2091639 * s0 + c * 2.3283064365386963e-10; // 2^-32
       s0 = s1;
       s1 = s2;
@@ -48,13 +61,13 @@ function Alea() {
     random.args = args;
     return random;
 
-  } (Array.prototype.slice.call(arguments)));
+  } (Array.prototype.slice.call(seed)));
 };
 
 function Mash() {
   var n = 0xefc8249d;
 
-  var mash = function(data) {
+  var mash: Mashed = function(data) {
     data = data.toString();
     for (var i = 0; i < data.length; i++) {
       n += data.charCodeAt(i);
@@ -73,4 +86,5 @@ function Mash() {
   return mash;
 }
 
-module.exports = Alea;
+export default Alea;
+
