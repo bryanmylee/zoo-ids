@@ -9,6 +9,13 @@ module.exports = {
   transform: {
     '^.+\\.(ts)$': 'ts-jest',
   },
+  collectCoverageFrom: ['./src/**/*.ts'],
+  coveragePathIgnorePatterns: ['./node_modules/'],
+  coverageThreshold: {
+    global: {
+      statements: 60,
+    },
+  },
   setupFilesAfterEnv: ['jest-extended'],
 };
 
