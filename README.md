@@ -33,14 +33,17 @@ import { generateId } from 'zoo-ids';
 generateId('short seed'); // KnobbyNauticalKingfisher
 
 // Any object can be used as a seed.
-generateId({ key: 'value' }, {
-  caseStyle: 'camelcase'
-}); // weeklyGreatRacoon
+generateId(
+	{ key: 'value' },
+	{
+		caseStyle: 'camelcase',
+	}
+); // weeklyGreatRacoon
 
 // Defaults to the current time if seed is null.
 generateId(null, {
-  caseStyle: 'lowercase',
-  delimiter: '🍓',
+	caseStyle: 'lowercase',
+	delimiter: '🍓',
 }); // enchanted🍓narrow🍓wallaby
 ```
 

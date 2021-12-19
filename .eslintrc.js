@@ -23,6 +23,5 @@ module.exports = {
 		'no-use-before-define': ['off'],
 		'no-return-assign': ['off'],
 		'no-param-reassign': ['off'],
-		'no-extra-parens': ['error', 'all'],
 	},
 };

@@ -1,14 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "moduleResolution": "node",
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "declarationDir": "dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "exclude": ["node_modules", "dist", "**/*.test.ts"],
-  "files": ["global.d.ts"]
+	"compilerOptions": {
+		"target": "es5",
+		"moduleResolution": "node",
+		"emitDeclarationOnly": true,
+		"declaration": true,
+		"declarationDir": "dist",
+		"strict": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"exclude": ["node_modules", "dist", "**/*.test.ts"],
+	"files": ["global.d.ts"]
 }
