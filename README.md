@@ -3,7 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/zoo-ids.svg)](https://www.npmjs.com/package/zoo-ids)
 [![npm downloads](https://img.shields.io/npm/dm/zoo-ids.svg)](https://www.npmjs.com/package/zoo-ids)
 ![license](https://img.shields.io/npm/l/zoo-ids)
-![build](https://img.shields.io/github/workflow/status/bryanmylee/zoo-ids/publish)
+![build](https://img.shields.io/github/actions/workflow/status/bryanmylee/zoo-ids/publish.yml)
 [![coverage](https://coveralls.io/repos/github/bryanmylee/zoo-ids/badge.svg)](https://coveralls.io/github/bryanmylee/zoo-ids?branch=master)
 [![size](https://img.shields.io/bundlephobia/min/zoo-ids)](https://bundlephobia.com/result?p=zoo-ids)
 
